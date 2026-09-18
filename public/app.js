@@ -23,7 +23,22 @@ document
   .addEventListener("click", () => showScreen("student-screen"));
 
 // --- TEACHER LOGIC ---
+// --- Answer Toggle Logic ---
+let answersVisible = true;
+document.getElementById("btn-toggle-answers").addEventListener("click", () => {
+  const list = document.getElementById("answers-list");
+  const btn = document.getElementById("btn-toggle-answers");
 
+  answersVisible = !answersVisible; // Flip the true/false switch
+
+  if (answersVisible) {
+    list.classList.remove("blurred");
+    btn.innerText = "Hide Answers";
+  } else {
+    list.classList.add("blurred");
+    btn.innerText = "Show Answers";
+  }
+});
 document.getElementById("btn-create-session").addEventListener("click", async () => {
   const questionInput = document.getElementById("question-input").value;
 

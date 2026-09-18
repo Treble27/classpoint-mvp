@@ -77,3 +77,11 @@ li {
     padding: 10px;
     border-radius: 4px;
 }
+
+/* Answer visibility toggle */
+.blurred {
+    filter: blur(6px);
+    opacity: 0.6;
+    transition: all 0.3s ease; /* Makes the blur fade in and out smoothly */
+    pointer-events: none; /* Prevents accidentally highlighting hidden text */
+}
