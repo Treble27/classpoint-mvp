@@ -1,0 +1,69 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassMVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- HOME SCREEN -->
+        <div id="home-screen" class="screen active">
+            <h1>Welcome to ClassMVP</h1>
+            <button id="btn-show-teacher">Teacher: Create Session</button>
+            <button id="btn-show-student">Student: Join Session</button>
+        </div>
+
+        <!-- TEACHER SCREEN -->
+        <div id="teacher-screen" class="screen">
+            <h2>Teacher Dashboard</h2>
+
+            <!-- Step 1: Teacher types a question -->
+            <div id="teacher-setup">
+                <input type="text" id="question-input" placeholder="Type your question here...">
+                <button id="btn-create-session">Start Session</button>
+            </div>
+
+            <!-- Step 2: Teacher views live session -->
+            <div id="teacher-active" class="hidden">
+                <h3>Join Code: <span id="display-code" style="color: red;">----</span></h3>
+                <h4 id="display-question">Question will appear here</h4>
+                <hr>
+                <h4>Student Answers:</h4>
+                <ul id="answers-list"></ul>
+            </div>
+
+            <button class="back-btn" onclick="location.reload()">Back to Home</button>
+        </div>
+
+        <!-- STUDENT SCREEN -->
+        <div id="student-screen" class="screen">
+            <h2>Student Join</h2>
+
+            <!-- Step 1: Student enters code and name -->
+            <div id="student-setup">
+                <input type="text" id="join-code" placeholder="4-Digit Code">
+                <input type="text" id="student-name" placeholder="Your Name">
+                <button id="btn-join-session">Join</button>
+            </div>
+
+            <!-- Step 2: Student sees question and answers -->
+            <div id="student-active" class="hidden">
+                <h3 id="student-question-display">Waiting for question...</h3>
+                <input type="text" id="student-answer" placeholder="Your answer...">
+                <button id="btn-submit-answer">Submit Answer</button>
+                <p id="student-status"></p>
+            </div>
+
+            <button class="back-btn" onclick="location.reload()">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
