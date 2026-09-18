@@ -77,6 +77,9 @@ async function fetchAnswers() {
     const data = await response.json();
     const answersList = document.getElementById("answers-list");
 
+    // Update the live counter
+    document.getElementById("answers-count").innerText = data.answers.length;
+
     // Clear old list
     answersList.innerHTML = "";
 
